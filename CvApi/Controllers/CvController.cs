@@ -15,14 +15,11 @@ namespace CvApi.Controllers
         [HttpPost]
         public async Task<IHttpActionResult> Post([FromBody] String query)
         {
-            var schema = new Schema { Query = new CvQuery(new CvRepository()) };
+            var schema = new Schema { Query = new CvQuery() };
 
-            var result = await new DocumentExecuter().ExecuteAsync(ex =>
-            {
-                ex.Schema = schema;
-                ex.Query = query;
+            var executionOptions = new ExecutionOptions { Schema = schema, Query = query };
 
-            }).ConfigureAwait(false);
+            var result = await new DocumentExecuter().ExecuteAsync(executionOptions).ConfigureAwait(false);
 
             if (result.Errors?.Count > 0)
             {

@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using CvApi.Models;
+using CvApi.Repositories;
 using GraphQL.Types;
 
 namespace CvApi.Types
@@ -17,36 +19,45 @@ namespace CvApi.Types
 
             Field<ListGraphType<FirmaType>>(
                 "firma",
+                arguments: new QueryArguments(new QueryArgument<IntGraphType>() { Name = "id", Description = "Firma id" }),
                 resolve: context =>
                 {
-                    return new List<Firma>() { new Firma() { Id = 1, Navn = "Von Ands pengetank", Beskrivelse = "Pudsning af flere fantasilliarder mønter"}, new Firma() { Id = 2, Navn = "Smørfabrikken" } };
-                }
+                    var id = context.GetArgument<int?>("id");
+                    return new FirmaRepository().Get(id);
+                 }
             );
 
-            Field<ListGraphType<UdannelsesType>>(
+            Field<ListGraphType<UddannelsesType>>(
                 "uddannelse",
+                arguments: new QueryArguments(new QueryArgument<IntGraphType>() { Name = "id", Description = "Uddannelse id" }),
                 resolve: context =>
                 {
-                    return new List<Udannelse>() { new Udannelse() { Id = 1, Navn = "Gåserød lilleskole" }, new Udannelse() { Id = 2, Navn = "Andeby folkeskole" } };
+                    var id = context.GetArgument<int?>("id");
+                    return new UddannelseRepository().Get(id);
                 }
             );
-
 
             Field<ListGraphType<ProjektType>>(
                "projekt",
-               resolve: context =>
-               {
-                   return new List<Projekt>() { new Projekt() { Id = 1, Navn = "Projekt Joakims arving" } };
-               }
+                arguments: new QueryArguments(new QueryArgument<IntGraphType>() { Name = "id", Description = "Uddannelse id" }),
+                resolve: context =>
+                {
+                    var id = context.GetArgument<int?>("id");
+                    return new ProjektRepository().Get(id);
+                }
            );
 
             Field<ListGraphType<KompetenceType>>(
                "kompetence",
-               resolve: context =>
-               {
-                   return new List<Kompetence>() { new Kompetence() { Id = 1, Navn = "Dovneri" }, new Kompetence() { Id = 2, Navn = "Raserianfald" } };
-               }
+                arguments: new QueryArguments(new QueryArgument<IntGraphType>() { Name = "id", Description = "Uddannelse id" }),
+                resolve: context =>
+                {
+                    var id = context.GetArgument<int?>("id");
+                    return new KompetenceRepository().Get(id);
+                }
            );
+
+
         }
     }
 }

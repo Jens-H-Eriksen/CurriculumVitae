@@ -6,25 +6,14 @@ namespace CvApi.Query
 {
     public class CvQuery : ObjectGraphType
     {
-        public CvQuery(CvRepository cvRepository)
+        public CvQuery()
         {
-            //Field<FirmaType>(
-            //        "firma",
-            //        arguments: new QueryArguments(new QueryArgument<IntGraphType>() { Name = "id", Description = "firmaid" }),
-            //        resolve: context =>
-            //        {
-            //            //  var id = context.GetArgument<int>("id");
-            //            //return cvRepository.Get(1);
-
-            //            return cvRepository.GetAll();
-            //        }
-            //        );
-
             Field<CvType>(
                 "cv",
                 resolve: context =>
                 {
-                    return cvRepository.Get(1);
+                    var cvRepository = new CvRepository();
+                    return cvRepository.Get();
                 }
             );
         }
