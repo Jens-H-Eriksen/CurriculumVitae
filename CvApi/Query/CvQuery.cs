@@ -12,8 +12,7 @@ namespace CvApi.Query
                 "cv",
                 resolve: context =>
                 {
-                    var cvRepository = new CvRepository();
-                    return cvRepository.Get();
+                    return new CvRepository().Get();
                 }
             );
         }

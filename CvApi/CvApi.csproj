@@ -120,6 +120,11 @@
     <Compile Include="Models\Firma.cs" />
     <Compile Include="Models\Uddannelse.cs" />
     <Compile Include="Query\CvQuery.cs" />
+    <Compile Include="Repositories\ErfaringBaseRepository.cs" />
+    <Compile Include="Repositories\FirmaRepository.cs" />
+    <Compile Include="Repositories\KompetenceRepository.cs" />
+    <Compile Include="Repositories\ProjektRepository.cs" />
+    <Compile Include="Repositories\UddannelseRepository.cs" />
     <Compile Include="Types\FirmaType.cs" />
     <Compile Include="Types\CvType.cs" />
     <Compile Include="Controllers\CvController.cs" />
