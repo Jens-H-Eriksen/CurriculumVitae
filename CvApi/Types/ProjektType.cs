@@ -1,13 +1,12 @@
-using CvApi.Models;
 using GraphQL.Types;
 
 namespace CvApi.Types
 {
-    public class UdannelsesType : ObjectGraphType<Udannelse>
+    public class ProjektType : ObjectGraphType<Projekt>
     {
-        public UdannelsesType()
+        public ProjektType()
         {
-            Name = "uddannelse";
+            Name = "projekt";
             Field(x => x.Id);
             Field(x => x.Navn);
             Field(x => x.Beskrivelse);

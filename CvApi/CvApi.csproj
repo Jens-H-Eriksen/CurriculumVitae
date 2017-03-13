@@ -112,19 +112,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Models\ErfaringBaseClass.cs" />
+    <Compile Include="Models\Kompetence.cs" />
+    <Compile Include="Models\Projekt.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\CvRepository.cs" />
-    <Compile Include="Models\CvAfsnit.cs" />
+    <Compile Include="Models\Cv.cs" />
     <Compile Include="Models\Firma.cs" />
     <Compile Include="Models\Udannelse.cs" />
     <Compile Include="Query\CvQuery.cs" />
     <Compile Include="Types\FirmaType.cs" />
-    <Compile Include="Types\CvAfsnitType.cs" />
+    <Compile Include="Types\CvType.cs" />
     <Compile Include="Controllers\CvController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Types\KompetenceType.cs" />
+    <Compile Include="Types\ProjektType.cs" />
     <Compile Include="Types\UdannelsesType.cs" />
   </ItemGroup>
   <ItemGroup>

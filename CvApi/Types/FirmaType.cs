@@ -10,6 +10,7 @@ namespace CvApi.Types
             Name = "firma";
             Field(x => x.Id);
             Field(x => x.Navn);
+            Field(x => x.Beskrivelse);
         }
     }
 }

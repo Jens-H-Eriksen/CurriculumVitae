@@ -20,8 +20,8 @@ namespace CvApi.Query
             //        }
             //        );
 
-            Field<CvAfsnitType>(
-                "afsnit",
+            Field<CvType>(
+                "cv",
                 resolve: context =>
                 {
                     return cvRepository.Get(1);

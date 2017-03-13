@@ -3,11 +3,11 @@ using GraphQL.Types;
 
 namespace CvApi.Types
 {
-    public class UdannelsesType : ObjectGraphType<Udannelse>
+    public class KompetenceType : ObjectGraphType<Kompetence>
     {
-        public UdannelsesType()
+        public KompetenceType()
         {
-            Name = "uddannelse";
+            Name = "kompetence";
             Field(x => x.Id);
             Field(x => x.Navn);
             Field(x => x.Beskrivelse);

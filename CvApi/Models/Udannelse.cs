@@ -1,8 +1,6 @@
 ﻿namespace CvApi.Models
 {
-    public class Udannelse
+    public class Udannelse: ErfaringBaseClass
     {
-        public int Id { get; set; }
-        public string Navn { get; set; }
     }
 }

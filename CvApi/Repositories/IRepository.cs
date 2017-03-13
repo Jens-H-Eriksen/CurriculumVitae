@@ -5,6 +5,6 @@ namespace CvApi.Repositories
 {
     public interface IRepository
     {
-        Task<CvAfsnit> Get(int id);
+        Task<Cv> Get(int id);
     }
 }
