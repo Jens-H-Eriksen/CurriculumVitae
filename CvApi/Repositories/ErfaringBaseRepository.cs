@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using CvApi.Models;
 
 namespace CvApi.Repositories
@@ -9,12 +8,12 @@ namespace CvApi.Repositories
     {
         public List<TEntity> Entities { private get; set; }
 
-        public Task<List<TEntity>> Get(int? id)
+        public List<TEntity> Get(int? id)
         {
             if (id == null)
-                return Task.FromResult(Entities);
+                return Entities;
 
-            return Task.FromResult(new List<TEntity>() { Entities.FirstOrDefault(f => f.Id == id) });
+            return new List<TEntity>() { Entities.FirstOrDefault(f => f.Id == id) };
         }
     }
 }

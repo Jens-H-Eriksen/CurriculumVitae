@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-
-namespace CvApi.Models
+﻿namespace CvApi.Models
 {
     public class ErfaringBaseClass 
     {
