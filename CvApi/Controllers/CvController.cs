@@ -3,7 +3,6 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Web.Http;
 using CvApi.Query;
-using CvApi.Repositories;
 using GraphQL;
 using GraphQL.Types;
 
